@@ -56,10 +56,36 @@ public class CaseGXZG extends BaseCase{
         Log.i("自动化测试","查产品输入框默认文案校验成功");
     }
 
+    /**
+     * Case001（首页_008--首页_010）
+     * @throws IOException
+     * @throws InterruptedException
+     */
     @Test
-    public void autoTestCase002(){
-
+    public void autoTestCase002() throws IOException, InterruptedException {
+        restartApp(PKG,NWACTIVITY,ET);
+        device.findObject(By.res(ET)).click();
+        device.wait(Until.findObject(By.res(etContent)),5000);
+        device.findObject(By.res(etContent)).setText("纳网");
+        device.findObject(By.clazz("android.support.v7.app.ActionBar$Tab").desc("网站")).click();
+        device.wait(Until.findObject(By.res(tvName)),10000);
+        Assert.assertTrue(device.hasObject(By.res(tvName).text("厦门纳网科技股份有限公司官网")));
+        device.findObject(By.clazz("android.support.v7.app.ActionBar$Tab").desc("产品")).click();
+        device.wait(Until.findObject(By.res(tvProductName)),10000);
+        Assert.assertTrue(device.hasObject(By.res(tvProductName).text("信用官网-安全可信赖的官网形象")));
+        device.findObject(By.clazz("android.support.v7.app.ActionBar$Tab").desc("企业")).click();
+        device.wait(Until.findObject(By.res(tvCompany)),10000);
+        Assert.assertTrue(device.hasObject(By.res(tvCompany).text("北京纳网科技有限公司")));
     }
-
+    @Test
+    public void autoTestCase003() throws IOException, InterruptedException {
+        restartApp(PKG,NWACTIVITY,ET);
+        device.findObject(By.res(rbProduct)).click();
+        device.findObject(By.res(ET)).click();
+        device.wait(Until.findObject(By.res(etContent).text("请输入产品名、商家名、条形码等")),5000);
+        device.findObject(By.res(etContent)).setText("6924241101682");
+        device.pressEnter();
+        device.pressEnter();
+    }
 
 }

@@ -7,5 +7,13 @@ public class NawangAppStr {
     String rbMerchant = "com.nawang.gxzg:id/rbMerchant";
     String rbWebSite = "com.nawang.gxzg:id/rbWebSite";
     String rbProduct = "com.nawang.gxzg:id/rbProduct";
-//    String pkg = "com.nawang.gxzg";
+    String etContent = "com.nawang.gxzg:id/etContent";
+    String tvCompany = "com.nawang.gxzg:id/tvCompany";
+    String tvName = "com.nawang.gxzg:id/tvName";
+    String tvProductName = "com.nawang.gxzg:id/tvProductName";
+//    String pkg = "com";
+//    String pkg = "com";
+//    String pkg = "com";
+//    String pkg = "com";
+//    String pkg = "com";
 }
