@@ -11,7 +11,7 @@ public class NawangAppStr {
     String tvCompany = "com.nawang.gxzg:id/tvCompany";
     String tvName = "com.nawang.gxzg:id/tvName";
     String tvProductName = "com.nawang.gxzg:id/tvProductName";
-//    String pkg = "com";
+    String tvBarCode = "com.nawang.gxzg:id/tvBarCode";
 //    String pkg = "com";
 //    String pkg = "com";
 //    String pkg = "com";

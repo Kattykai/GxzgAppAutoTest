@@ -35,7 +35,7 @@ public class CaseGXZG extends BaseCase{
     /**
      * Case001（首页_001--首页_005）
      * @throws IOException
-     * @throws InterruptedException
+     * @throws
      */
     @Test
     public void autoTestCase001() throws IOException, InterruptedException {
@@ -59,7 +59,6 @@ public class CaseGXZG extends BaseCase{
     /**
      * Case001（首页_008--首页_010）
      * @throws IOException
-     * @throws InterruptedException
      */
     @Test
     public void autoTestCase002() throws IOException, InterruptedException {
@@ -77,6 +76,12 @@ public class CaseGXZG extends BaseCase{
         device.wait(Until.findObject(By.res(tvCompany)),10000);
         Assert.assertTrue(device.hasObject(By.res(tvCompany).text("北京纳网科技有限公司")));
     }
+
+    /**
+     *
+     * @throws IOException
+     * @throws
+     */
     @Test
     public void autoTestCase003() throws IOException, InterruptedException {
         restartApp(PKG,NWACTIVITY,ET);
@@ -84,8 +89,11 @@ public class CaseGXZG extends BaseCase{
         device.findObject(By.res(ET)).click();
         device.wait(Until.findObject(By.res(etContent).text("请输入产品名、商家名、条形码等")),5000);
         device.findObject(By.res(etContent)).setText("6924241101682");
-        device.pressEnter();
-        device.pressEnter();
+        device.findObject(By.clazz("android.support.v7.app.ActionBar$Tab").desc("网站")).click();
+        device.findObject(By.clazz("android.support.v7.app.ActionBar$Tab").desc("产品")).click();
+        device.wait(Until.findObject(By.res(tvProductName)),5000);
+        Assert.assertTrue(device.hasObject(By.res(tvProductName).text("晾晒收纳网袋")));
+        Assert.assertTrue(device.hasObject(By.res(tvBarCode).text("条形码：6924241101682 (注册已通报)")));
     }
 
 }
